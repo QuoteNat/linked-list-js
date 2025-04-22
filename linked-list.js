@@ -141,9 +141,7 @@ export class List {
   insertAt(value, index) {
     let lastNode = null;
     let currentNode = this.head;
-    console.log(index);
     for (let i = 0; i < index; i++) {
-      console.log(i);
       // Return null if index out of bounds
       if (currentNode === null) return null;
       lastNode = currentNode;
@@ -152,5 +150,18 @@ export class List {
 
     let newNode = new Node(value, currentNode);
     lastNode.next = newNode;
+  }
+
+  removeAt(index) {
+    let lastNode = null;
+    let currentNode = this.head;
+    for (let i = 0; i < index; i++) {
+      // Return null if index out of bounds
+      if (currentNode === null) return null;
+      lastNode = currentNode;
+      currentNode = currentNode.next;
+    }
+
+    lastNode.next = currentNode.next;
   }
 }

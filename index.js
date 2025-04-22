@@ -17,3 +17,5 @@ console.log(list.find(null));
 console.log(list.find("Nothing!"));
 list.insertAt("Inserted at 1", 1);
 console.log(list.toString());
+list.removeAt(1);
+console.log(list.toString());
