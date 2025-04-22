@@ -37,4 +37,9 @@ export class List {
     string += "null";
     return string;
   }
+
+  prepend(value) {
+    let newHead = new Node(value, this.head);
+    this.head = newHead;
+  }
 }
