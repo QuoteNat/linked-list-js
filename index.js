@@ -9,3 +9,5 @@ console.log(list.size());
 console.log(list.head.value + " " + list.tail.value);
 console.log(list.at(3).value);
 console.log(list.at(55));
+console.log(list.pop().value);
+console.log(list.toString());

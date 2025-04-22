@@ -89,4 +89,22 @@ export class List {
     }
     return currentNode;
   }
+
+  /**
+   * Removes the last element in the list
+   * @returns The last element in the list
+   */
+  pop() {
+    let lastNode = null;
+    let currentNode = this.head;
+
+    while (currentNode.next !== null) {
+      lastNode = currentNode;
+      currentNode = currentNode.next;
+    }
+
+    this.tail = lastNode;
+    lastNode.next = null;
+    return currentNode;
+  }
 }
