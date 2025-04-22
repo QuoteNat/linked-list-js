@@ -1,27 +1,44 @@
+/**
+ * Node class for use in linked list implementations.
+ */
 export class Node {
-  #value = null;
-  #next = null;
+  value = null;
+  next = null;
   constructor(value = null, next = null) {
     this.value = value;
     this.next = next;
   }
 }
 
+/**
+ * A linked list implementation of the list data structure.
+ */
 export class List {
   head = null;
   tail = null;
 
+  /**
+   * Creates a linked list with a null node
+   */
   constructor() {
     this.head = new Node();
     this.tail = this.head;
   }
 
+  /**
+   * Appends a node with value to the end of the lsit
+   * @param {*} value
+   */
   append(value) {
     let newTail = new Node(value);
     this.tail.next = newTail;
     this.tail = newTail;
   }
 
+  /**
+   *
+   * @returns A string containing each element of the list and it's next value
+   */
   toString() {
     let string = "";
     let currentNode = this.head;
@@ -34,6 +51,10 @@ export class List {
     return string;
   }
 
+  /**
+   * Prepends a node with value to the start of the list
+   * @param {*} value
+   */
   prepend(value) {
     let newHead = new Node(value, this.head);
     this.head = newHead;
@@ -138,6 +159,12 @@ export class List {
     return null;
   }
 
+  /**
+   * Insert a new node at index with value
+   * @param {*} value
+   * @param {*} index
+   * @returns The added node, or null if index is out of bounds.
+   */
   insertAt(value, index) {
     let lastNode = null;
     let currentNode = this.head;
@@ -150,8 +177,14 @@ export class List {
 
     let newNode = new Node(value, currentNode);
     lastNode.next = newNode;
+    return newNode;
   }
 
+  /**
+   * Removes the node at index
+   * @param {*} index
+   * @returns The removed node, or null if index is out of bounds.
+   */
   removeAt(index) {
     let lastNode = null;
     let currentNode = this.head;
@@ -163,5 +196,6 @@ export class List {
     }
 
     lastNode.next = currentNode.next;
+    return currentNode;
   }
 }
