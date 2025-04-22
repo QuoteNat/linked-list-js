@@ -5,10 +5,6 @@ export class Node {
     this.value = value;
     this.next = next;
   }
-
-  set(value) {
-    this.value = value;
-  }
 }
 
 export class List {
@@ -140,5 +136,21 @@ export class List {
       index += 1;
     }
     return null;
+  }
+
+  insertAt(value, index) {
+    let lastNode = null;
+    let currentNode = this.head;
+    console.log(index);
+    for (let i = 0; i < index; i++) {
+      console.log(i);
+      // Return null if index out of bounds
+      if (currentNode === null) return null;
+      lastNode = currentNode;
+      currentNode = currentNode.next;
+    }
+
+    let newNode = new Node(value, currentNode);
+    lastNode.next = newNode;
   }
 }

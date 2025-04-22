@@ -15,3 +15,5 @@ console.log(list.contains(null));
 console.log(list.contains("Nothing!"));
 console.log(list.find(null));
 console.log(list.find("Nothing!"));
+list.insertAt("Inserted at 1", 1);
+console.log(list.toString());
