@@ -71,4 +71,22 @@ export class List {
   get tail() {
     return this.tail;
   }
+
+  /**
+   * Returns the node at index
+   * @param {*} index
+   * @returns The node at index. If index is out of bounds null will be returned.
+   */
+  at(index) {
+    if (index == 0) return this.head;
+    if (index < 0) return null;
+    let currentNode = this.head;
+    for (let i = 1; i < index; i++) {
+      currentNode = currentNode.next;
+      if (currentNode === null) {
+        return null;
+      }
+    }
+    return currentNode;
+  }
 }
