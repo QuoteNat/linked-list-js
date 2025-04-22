@@ -11,3 +11,5 @@ console.log(list.at(3).value);
 console.log(list.at(55));
 console.log(list.pop().value);
 console.log(list.toString());
+console.log(list.contains(null));
+console.log(list.contains("Nothing!"));
