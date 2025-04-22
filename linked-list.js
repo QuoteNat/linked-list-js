@@ -55,4 +55,20 @@ export class List {
     }
     return counter;
   }
+
+  /**
+   *
+   * @returns The head node of the list
+   */
+  get head() {
+    return this.head;
+  }
+
+  /**
+   *
+   * @returns The tail node of the list.
+   */
+  get tail() {
+    return this.tail;
+  }
 }

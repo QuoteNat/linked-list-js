@@ -6,3 +6,4 @@ console.log(list.toString());
 list.prepend("Prepended");
 console.log(list.toString());
 console.log(list.size());
+console.log(list.head.value + " " + list.tail.value);
