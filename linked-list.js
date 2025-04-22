@@ -42,4 +42,17 @@ export class List {
     let newHead = new Node(value, this.head);
     this.head = newHead;
   }
+
+  /**
+   * Returns the current size of the list
+   */
+  size() {
+    let counter = 1;
+    let currentNode = this.head;
+    while (currentNode.next !== null) {
+      currentNode = currentNode.next;
+      counter += 1;
+    }
+    return counter;
+  }
 }

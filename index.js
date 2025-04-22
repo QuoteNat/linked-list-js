@@ -5,3 +5,4 @@ list.append("Test");
 console.log(list.toString());
 list.prepend("Prepended");
 console.log(list.toString());
+console.log(list.size());
