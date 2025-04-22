@@ -108,6 +108,11 @@ export class List {
     return currentNode;
   }
 
+  /**
+   * Returns whether value is contained within the list
+   * @param {*} value
+   * @returns Boolean
+   */
   contains(value) {
     let currentNode = this.head;
     while (currentNode !== null) {
@@ -117,5 +122,23 @@ export class List {
       currentNode = currentNode.next;
     }
     return false;
+  }
+
+  /**
+   * Return the index of the first instance of value in the list or null if it isn't
+   * @param {*} value
+   * @returns Boolean
+   */
+  find(value) {
+    let currentNode = this.head;
+    let index = 0;
+    while (currentNode !== null) {
+      if (currentNode.value === value) {
+        return index;
+      }
+      currentNode = currentNode.next;
+      index += 1;
+    }
+    return null;
   }
 }
