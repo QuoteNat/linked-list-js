@@ -41,10 +41,10 @@ export class List {
     if (this.head == null) return string;
     let currentNode = this.head;
     while (currentNode.next !== null) {
-      string += `( ${currentNode.value} ) -> `;
+      string += `( ${JSON.stringify(currentNode.value)} ) -> `;
       currentNode = currentNode.next;
     }
-    string += `( ${currentNode.value} ) -> `;
+    string += `( ${JSON.stringify(currentNode.value)} ) -> `;
     string += "null";
     return string;
   }
