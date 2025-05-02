@@ -38,6 +38,7 @@ export class List {
    */
   toString() {
     let string = "";
+    if (this.head == null) return string;
     let currentNode = this.head;
     while (currentNode.next !== null) {
       string += `( ${currentNode.value} ) -> `;
