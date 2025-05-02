@@ -18,21 +18,18 @@ export class List {
   tail = null;
 
   /**
-   * Creates a linked list with a null node
-   */
-  constructor() {
-    this.head = new Node();
-    this.tail = this.head;
-  }
-
-  /**
    * Appends a node with value to the end of the lsit
    * @param {*} value
    */
   append(value) {
     let newTail = new Node(value);
-    this.tail.next = newTail;
-    this.tail = newTail;
+    if (this.head == null) {
+      this.head = newTail;
+      this.tail = this.head;
+    } else {
+      this.tail.next = newTail;
+      this.tail = newTail;
+    }
   }
 
   /**
@@ -66,6 +63,7 @@ export class List {
   size() {
     let counter = 1;
     let currentNode = this.head;
+    if (currentNode == null) return 0;
     while (currentNode.next !== null) {
       currentNode = currentNode.next;
       counter += 1;
