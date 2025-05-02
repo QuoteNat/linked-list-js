@@ -185,6 +185,11 @@ export class List {
    * @returns The removed node, or null if index is out of bounds.
    */
   removeAt(index) {
+    if (index == 0) {
+      let head = this.head;
+      this.head = this.head.next;
+      return head;
+    }
     let lastNode = null;
     let currentNode = this.head;
     for (let i = 0; i < index; i++) {
