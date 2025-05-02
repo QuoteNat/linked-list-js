@@ -196,4 +196,12 @@ export class List {
     lastNode.next = currentNode.next;
     return currentNode;
   }
+
+  makeListIterator = function* () {
+    let currentNode = this.head;
+    while (currentNode !== null) {
+      yield currentNode.value;
+      currentNode = currentNode.next;
+    }
+  };
 }
